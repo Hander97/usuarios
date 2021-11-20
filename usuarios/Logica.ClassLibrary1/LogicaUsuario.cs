@@ -28,15 +28,16 @@ namespace Logica.ClassLibrary1
         {
             try
             {
-                var usuario = dc.Usuario.Where(Data => Data.usu_status == 'A'
-                                                && Data.usu_correo.Equals(email)
-                                                && Data.usu_password.Equals(clave)).FirstOrDefault();
-                return usuario;
+                var Usuario = dc.Usuario.Where(data => data.usu_status == 'A'
+                                               && data.usu_correo.Equals(email)
+                                               && data.usu_password.Equals(clave)
+                                               ).FirstOrDefault();
+
+                return Usuario;
             }
             catch (Exception ex)
             {
-
-                throw new ArgumentException("Error al Obtener Usuario" + ex.Message);
+                throw new ArgumentException("Error al obtener Usuario " + ex.Message);
             }
         }
         public static bool saveUser(Usuario dataUsuario) 
