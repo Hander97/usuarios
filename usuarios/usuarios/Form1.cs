@@ -21,7 +21,7 @@ namespace usuarios
         }
         public class Encrypt
         {
-            public static string GetSHA1(string str)
+            public static string GetSha1(string str)
             {
                 SHA1 sha1 = SHA1Managed.Create();
                 ASCIIEncoding encoding = new ASCIIEncoding();
@@ -38,9 +38,8 @@ namespace usuarios
             {
                 string correo = txtUser.Text.TrimStart().TrimEnd();
                 string clave = txtPassword.Text;
-                string cadenaEncriptada = Encrypt.GetSHA1(clave);
-               
-
+                string cadenaEncriptada = Encrypt.GetSha1(clave);
+              
                 if (!string.IsNullOrEmpty(correo) && !string.IsNullOrEmpty(cadenaEncriptada))
                 {
                     Usuario usuario = new Usuario();
@@ -58,15 +57,13 @@ namespace usuarios
                         MessageBox.Show("Error en usuario o clave", "Sistema de Matriculación Vehicular",
                                                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }   
+                }
             }
             catch (Exception)
             {
 
                 throw;
             }
-
-
         }
     }
 }
