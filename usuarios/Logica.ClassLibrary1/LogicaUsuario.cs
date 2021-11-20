@@ -48,7 +48,7 @@ namespace Logica.ClassLibrary1
                 dc.Usuario.InsertOnSubmit(dataUsuario);
                 dc.SubmitChanges();
                 dataUsuario.usu_add = DateTime.Now;
-                dataUsuario.usu_status = 'A';
+                dataUsuario.usu_status ='A';
 
                 result = true;
                 return result;
