@@ -40,10 +40,10 @@ namespace usuarios
                 string clave = txtPassword.Text;
                 string cadenaEncriptada = Encrypt.GetSha1(clave);
               
-                if (!string.IsNullOrEmpty(correo) && !string.IsNullOrEmpty(cadenaEncriptada))
+                if (!string.IsNullOrEmpty(correo) && !string.IsNullOrEmpty(clave))
                 {
                     Usuario usuario = new Usuario();
-                    usuario = LogicaUsuario.getUserXLogin(correo, cadenaEncriptada);
+                    usuario = LogicaUsuario.getUserXLogin(correo, clave);
                     if (usuario != null)
                     {
                         var dataUser = usuario.usu_nombres + " " + usuario.usu_apellidos;
