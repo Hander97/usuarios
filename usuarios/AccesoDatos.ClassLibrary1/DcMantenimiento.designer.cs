@@ -1329,9 +1329,10 @@ namespace AccesoDatos.ClassLibrary1
 		private System.Nullable<int> _rol_id;
 		
 		private EntityRef<Rol> _Rol;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
+        public int usu_intentos;
+
+        #region Definiciones de métodos de extensibilidad
+        partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void Onusu_idChanging(int value);

@@ -4,6 +4,7 @@ using System;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Text;
+using System.Data;
 
 namespace usuarios
 {
@@ -42,6 +43,7 @@ namespace usuarios
               
                 if (!string.IsNullOrEmpty(correo) && !string.IsNullOrEmpty(clave))
                 {
+                   
                     Usuario usuario = new Usuario();
                     usuario = LogicaUsuario.getUserXLogin(correo, clave);
                     if (usuario != null)
@@ -51,6 +53,10 @@ namespace usuarios
 
                         MessageBox.Show("Bienvenido al sistema\n" + usuario.Rol.rol_descripcion
                         + "\n" + dataUser2, "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Form2 form2 = new Form2();
+                        form2.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -58,12 +64,29 @@ namespace usuarios
                                                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+               
             }
             catch (Exception)
             {
 
                 throw;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToLongTimeString();
+            lblfecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

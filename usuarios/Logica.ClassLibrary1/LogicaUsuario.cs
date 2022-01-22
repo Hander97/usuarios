@@ -24,6 +24,21 @@ namespace Logica.ClassLibrary1
                 throw new ArgumentException("Error al  Obtener Usuario" + ex.Message);
             }
         }
+        public static List<Usuario> getUsersXCorreo(string correo)
+        {
+            try
+            {
+                var lista = dc.Usuario.Where(data => data.usu_status == 'A'
+                                             && data.usu_correo.StartsWith(correo))
+                                      .OrderBy(ord => ord.usu_apellidos);
+
+                return lista.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al obtener Usuario " + ex.Message);
+            }
+        }
         public static Usuario getUserXLogin(string email, string clave)
         {
             try
@@ -92,6 +107,25 @@ namespace Logica.ClassLibrary1
             {
 
                 throw new ArgumentException("Error al Eliminar Usuario" + ex.Message);
+            }
+        }
+
+        public static void intentos(string email)
+        {
+            try
+            {
+                var Usuario = dc.Usuario.Where(Data => Data.usu_status == 'A'
+                                                && Data.usu_correo.Equals(email)
+                                                ).FirstOrDefault();
+                int intentos = (int)Usuario.usu_intentos;
+                intentos = intentos - 1;
+                Usuario.usu_intentos = (int)(byte?)intentos;
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException("Error al eliminar usuario" + ex.Message);
             }
         }
     }
