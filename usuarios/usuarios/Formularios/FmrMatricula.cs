@@ -43,7 +43,6 @@ namespace usuarios.Formularios
                 MessageBox.Show("Error al cargar las Provincias", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void loadCantones(int codigoProvincia)
         {
             try
@@ -71,8 +70,6 @@ namespace usuarios.Formularios
                 MessageBox.Show("Error al cargar Cantones", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
         private void btnBuscarPersona_Click(object sender, EventArgs e)
         {
             searchPerson();
@@ -98,13 +95,37 @@ namespace usuarios.Formularios
                 }
             }
         }
-
+        private void searchVehiculo()
+        {
+            string placa = txtID.Text.TrimEnd().TrimStart();
+            if (!string.IsNullOrEmpty(placa))
+            {
+                Vehiculo vehiculo = new Vehiculo();
+                vehiculo = Logica.ClassLibrary1.LogicaVehiculo.getVehiculoXPlaca(placa);
+                if (vehiculo != null)
+                {
+                    lblIdVehi.Text = vehiculo.veh_id.ToString();
+                    //Interpolation
+                    lblIdVehi.Text = $"{vehiculo.Modelo.Marca.mar_descripcion} {vehiculo.Modelo.mod_descripcion}";
+                }
+                else
+                {
+                    MessageBox.Show("Vehiculo no existe", "Sistema Matriculacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Formularios.FrmVehiculo frmVehiculo = new FrmVehiculo();
+                    frmVehiculo.Show();
+                }
+            }
+        }
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbProvincia.SelectedIndex > 0)
             {
                 loadCantones(int.Parse(cmbProvincia.SelectedValue.ToString()));
             }
+        }
+        private void btnBuscarVehiculo_Click(object sender, EventArgs e)
+        {
+            searchVehiculo();
         }
     }
     }

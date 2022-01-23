@@ -22,8 +22,30 @@ namespace Logica.ClassLibrary1
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Error al obtener Usuario " + ex.Message);
+                throw new ArgumentException("Error al obtener Persona " + ex.Message);
             }
         }
+        public static bool savePersona(Persona dataPersona)
+        {
+            try
+            {
+                bool result = false;
+                dataPersona.per_add = DateTime.Now;
+                dataPersona.per_estatus = 'A';
+
+                dc.Persona.InsertOnSubmit(dataPersona);
+                //Commit a la base
+                dc.SubmitChanges();
+
+                result = true;
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al guardar Persona" + ex.Message);
+            }
+        }
+
     }
 }

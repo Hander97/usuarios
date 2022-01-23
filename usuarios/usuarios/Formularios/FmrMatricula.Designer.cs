@@ -54,7 +54,7 @@ namespace usuarios.Formularios
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(156, 9);
+            this.label1.Location = new System.Drawing.Point(156, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 27);
             this.label1.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace usuarios.Formularios
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 79);
+            this.label2.Location = new System.Drawing.Point(12, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 19);
             this.label2.TabIndex = 1;
@@ -74,7 +74,7 @@ namespace usuarios.Formularios
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 124);
+            this.label3.Location = new System.Drawing.Point(12, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 19);
             this.label3.TabIndex = 2;
@@ -84,7 +84,7 @@ namespace usuarios.Formularios
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 165);
+            this.label4.Location = new System.Drawing.Point(12, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 19);
             this.label4.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace usuarios.Formularios
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 255);
+            this.label6.Location = new System.Drawing.Point(12, 237);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 19);
             this.label6.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace usuarios.Formularios
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 304);
+            this.label7.Location = new System.Drawing.Point(12, 286);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 19);
             this.label7.TabIndex = 6;
@@ -114,7 +114,7 @@ namespace usuarios.Formularios
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 375);
+            this.label8.Location = new System.Drawing.Point(12, 339);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 19);
             this.label8.TabIndex = 7;
@@ -122,14 +122,14 @@ namespace usuarios.Formularios
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 77);
+            this.dateTimePicker1.Location = new System.Drawing.Point(161, 59);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(161, 124);
+            this.dateTimePicker2.Location = new System.Drawing.Point(161, 106);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 9;
@@ -137,7 +137,7 @@ namespace usuarios.Formularios
             // txtNumEspecie
             // 
             this.txtNumEspecie.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumEspecie.Location = new System.Drawing.Point(161, 162);
+            this.txtNumEspecie.Location = new System.Drawing.Point(161, 144);
             this.txtNumEspecie.Name = "txtNumEspecie";
             this.txtNumEspecie.Size = new System.Drawing.Size(200, 26);
             this.txtNumEspecie.TabIndex = 10;
@@ -146,7 +146,7 @@ namespace usuarios.Formularios
             // 
             this.cmbCanton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCanton.FormattingEnabled = true;
-            this.cmbCanton.Location = new System.Drawing.Point(161, 252);
+            this.cmbCanton.Location = new System.Drawing.Point(161, 234);
             this.cmbCanton.Name = "cmbCanton";
             this.cmbCanton.Size = new System.Drawing.Size(200, 27);
             this.cmbCanton.TabIndex = 11;
@@ -155,7 +155,7 @@ namespace usuarios.Formularios
             // 
             this.btnBuscarPersona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnBuscarPersona.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPersona.Location = new System.Drawing.Point(385, 304);
+            this.btnBuscarPersona.Location = new System.Drawing.Point(385, 286);
             this.btnBuscarPersona.Name = "btnBuscarPersona";
             this.btnBuscarPersona.Size = new System.Drawing.Size(87, 31);
             this.btnBuscarPersona.TabIndex = 12;
@@ -167,17 +167,18 @@ namespace usuarios.Formularios
             // 
             this.btnBuscarVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnBuscarVehiculo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarVehiculo.Location = new System.Drawing.Point(385, 368);
+            this.btnBuscarVehiculo.Location = new System.Drawing.Point(386, 332);
             this.btnBuscarVehiculo.Name = "btnBuscarVehiculo";
             this.btnBuscarVehiculo.Size = new System.Drawing.Size(87, 31);
             this.btnBuscarVehiculo.TabIndex = 13;
             this.btnBuscarVehiculo.Text = "Buscar";
             this.btnBuscarVehiculo.UseVisualStyleBackColor = false;
+            this.btnBuscarVehiculo.Click += new System.EventHandler(this.btnBuscarVehiculo_Click);
             // 
             // lblPersona
             // 
             this.lblPersona.AutoSize = true;
-            this.lblPersona.Location = new System.Drawing.Point(170, 333);
+            this.lblPersona.Location = new System.Drawing.Point(170, 315);
             this.lblPersona.Name = "lblPersona";
             this.lblPersona.Size = new System.Drawing.Size(0, 13);
             this.lblPersona.TabIndex = 14;
@@ -193,7 +194,7 @@ namespace usuarios.Formularios
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(161, 304);
+            this.txtCedula.Location = new System.Drawing.Point(161, 286);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(200, 26);
             this.txtCedula.TabIndex = 16;
@@ -201,7 +202,7 @@ namespace usuarios.Formularios
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(161, 372);
+            this.txtID.Location = new System.Drawing.Point(161, 337);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(200, 26);
             this.txtID.TabIndex = 17;
@@ -210,7 +211,7 @@ namespace usuarios.Formularios
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 210);
+            this.label5.Location = new System.Drawing.Point(12, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 19;
@@ -220,7 +221,7 @@ namespace usuarios.Formularios
             // 
             this.cmbProvincia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(161, 207);
+            this.cmbProvincia.Location = new System.Drawing.Point(161, 189);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(200, 27);
             this.cmbProvincia.TabIndex = 20;
