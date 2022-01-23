@@ -14,6 +14,8 @@ namespace usuarios.Formularios
 {
     public partial class FmrPersona : Form
     {
+        public delegate void envDatos(Persona persona);
+        public event envDatos enviar;
         public FmrPersona()
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace usuarios.Formularios
                 if (Logica.ClassLibrary1.LogicaPersona.savePersona(persona))
                 {
                     MessageBox.Show("Guardado Correcto");
+                    enviar(persona);
                 }
 
             }

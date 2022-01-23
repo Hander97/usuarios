@@ -74,6 +74,14 @@ namespace usuarios.Formularios
         {
             searchPerson();
         }
+        public void ejecutar(Persona persona)
+        {
+            lblPersona.Text = persona.per_nombres + " " + persona.per_apellidos;
+        }
+        private Persona FmrP_enviar(Persona persona)
+        {
+            throw new NotImplementedException();
+        }
         private void searchPerson()
         {
             string identificacion = txtCedula.Text.TrimEnd().TrimStart();
@@ -91,7 +99,10 @@ namespace usuarios.Formularios
                 {
                     MessageBox.Show("Persona no existe", "Sistema Matriculacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Formularios.FmrPersona frmPersona = new FmrPersona();
-                    frmPersona.Show();
+                    FmrPersona frmP = new FmrPersona();
+                    frmP.enviar += new FmrPersona.envDatos(ejecutar);
+                    frmP.ShowDialog();
+
                 }
             }
         }
