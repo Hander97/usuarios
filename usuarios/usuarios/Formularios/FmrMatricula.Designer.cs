@@ -48,6 +48,7 @@ namespace usuarios.Formularios
             this.txtID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -186,7 +187,7 @@ namespace usuarios.Formularios
             // lblIdVehi
             // 
             this.lblIdVehi.AutoSize = true;
-            this.lblIdVehi.Location = new System.Drawing.Point(170, 401);
+            this.lblIdVehi.Location = new System.Drawing.Point(158, 366);
             this.lblIdVehi.Name = "lblIdVehi";
             this.lblIdVehi.Size = new System.Drawing.Size(0, 13);
             this.lblIdVehi.TabIndex = 15;
@@ -227,12 +228,25 @@ namespace usuarios.Formularios
             this.cmbProvincia.TabIndex = 20;
             this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(201, 390);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(87, 31);
+            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // FmrMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(485, 414);
+            this.ClientSize = new System.Drawing.Size(487, 432);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmbProvincia);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtID);
@@ -281,5 +295,6 @@ namespace usuarios.Formularios
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbProvincia;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

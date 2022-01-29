@@ -138,6 +138,47 @@ namespace usuarios.Formularios
         {
             searchVehiculo();
         }
+        private void guardarMatricula()
+        {
+            try
+            {
+                Matricula matricula = new Matricula();
+
+                matricula.mat_fechaemision = dateTimePicker1.Value;
+                matricula.mat_fechacaducidad = dateTimePicker2.Value;
+                matricula.mat_numeroespecie = txtNumEspecie.Text;
+                matricula.mat_valormatricula = 500;
+                matricula.can_id = Convert.ToInt32(cmbCanton.SelectedValue.ToString());
+                matricula.per_id = txtCedula.Text;
+                matricula.veh_id = int.Parse(lblIdVehi.Text);
+                bool resSaveMatricula = Logica.ClassLibrary1.LogicaMatricula.saveMatricula(matricula);
+                if (resSaveMatricula)
+                {
+                    MessageBox.Show("Matricula generada correctamente", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    var persona = Logica.ClassLibrary1.LogicaPersona.getPersonXIdentificacion(matricula.per_id);
+
+                    string datosPersona = $"{persona.per_apellidos} {persona.per_nombres}";
+
+                    bool resEmail = Logica.ClassLibrary1.LogicaMatricula.sendEmail(persona.per_correo, datosPersona, matricula.mat_fechaemision);
+                    if (resEmail)
+                    {
+                        MessageBox.Show("Correo enviado correctamente", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar matricula", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardarMatricula();
+        }
     }
     }
 
