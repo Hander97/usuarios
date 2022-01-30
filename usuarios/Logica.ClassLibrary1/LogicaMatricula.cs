@@ -35,7 +35,7 @@ namespace Logica.ClassLibrary1
         }
 
 
-        private static string convertHtmlToString(string cliente, DateTime fecha)
+        private static string convertHtmlToString(string cliente, DateTime fecha, DateTime fechaC, string ciudad, string vehiculo)
         {
             string body = string.Empty;
 
@@ -44,18 +44,21 @@ namespace Logica.ClassLibrary1
                 body = reader.ReadToEnd();
                 body = body.Replace("@Cliente", cliente);
                 body = body.Replace("@Fecha", fecha.ToLongDateString());
+                body = body.Replace("@FechaC", fechaC.ToLongDateString());
+                body = body.Replace("@Vehiculo", vehiculo);
+                body = body.Replace("@Ciudad", fecha.ToLongDateString());
             }
 
             return body;
         }
 
-        public static bool sendEmail(string correo, string persona, DateTime fecha)
+        public static bool sendEmail(string correo, string persona, DateTime fecha, DateTime fechaC, string ciudad, string vehiculo)
         {
             try
             {
                 var serverConfig = LogicaEmail.getConfigEmailServer();
                 string asunto = "Matriculacion Vehicular";
-                bool res = Utilidades.EnviarCorreo.SendCorreo(serverConfig, correo, asunto, convertHtmlToString(persona, fecha));
+                bool res = Utilidades.EnviarCorreo.SendCorreo(serverConfig, correo, asunto, convertHtmlToString(persona, fecha, fechaC, ciudad, vehiculo));
 
                 return res;
             }
@@ -66,9 +69,5 @@ namespace Logica.ClassLibrary1
             }
         }
 
-        public static bool sendEmail(string per_correo, string datosPersona, DateTime? mat_fechaemision)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

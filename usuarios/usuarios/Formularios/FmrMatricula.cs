@@ -1,4 +1,5 @@
 ﻿using AccesoDatos.ClassLibrary1;
+using Logica.ClassLibrary1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,11 +78,7 @@ namespace usuarios.Formularios
         public void ejecutar(Persona persona)
         {
             lblPersona.Text = persona.per_nombres + " " + persona.per_apellidos;
-        }
-        private Persona FmrP_enviar(Persona persona)
-        {
-            throw new NotImplementedException();
-        }
+        }      
         private void searchPerson()
         {
             string identificacion = txtCedula.Text.TrimEnd().TrimStart();
@@ -115,7 +112,7 @@ namespace usuarios.Formularios
                 vehiculo = Logica.ClassLibrary1.LogicaVehiculo.getVehiculoXPlaca(placa);
                 if (vehiculo != null)
                 {
-                    lblIdVehi.Text = vehiculo.veh_id.ToString();
+                    lblID.Text = vehiculo.veh_id.ToString();
                     //Interpolation
                     lblIdVehi.Text = $"{vehiculo.Modelo.Marca.mar_descripcion} {vehiculo.Modelo.mod_descripcion}";
                 }
@@ -143,36 +140,34 @@ namespace usuarios.Formularios
             try
             {
                 Matricula matricula = new Matricula();
-
                 matricula.mat_fechaemision = dateTimePicker1.Value;
                 matricula.mat_fechacaducidad = dateTimePicker2.Value;
                 matricula.mat_numeroespecie = txtNumEspecie.Text;
-                matricula.mat_valormatricula = 500;
+                matricula.mat_valormatricula = 150;
                 matricula.can_id = Convert.ToInt32(cmbCanton.SelectedValue.ToString());
                 matricula.per_id = txtCedula.Text;
-                matricula.veh_id = int.Parse(lblIdVehi.Text);
+                matricula.veh_id = int.Parse(lblID.Text);
                 bool resSaveMatricula = Logica.ClassLibrary1.LogicaMatricula.saveMatricula(matricula);
                 if (resSaveMatricula)
                 {
-                    MessageBox.Show("Matricula generada correctamente", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    var persona = Logica.ClassLibrary1.LogicaPersona.getPersonXIdentificacion(matricula.per_id);
-
-                    string datosPersona = $"{persona.per_apellidos} {persona.per_nombres}";
-
-                    bool resEmail = Logica.ClassLibrary1.LogicaMatricula.sendEmail(persona.per_correo, datosPersona, matricula.mat_fechaemision);
+                    MessageBox.Show("Matricula Generada Correctamente", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var persona = LogicaPersona.getPersonXIdentificacion(matricula.per_id);
+                    string datosPersona = $"{persona.per_nombres} {persona.per_apellidos}";
+                    string placa = txtID.Text.TrimEnd().TrimStart();
+                    Vehiculo vehiculo = new Vehiculo();
+                    vehiculo = Logica.ClassLibrary1.LogicaVehiculo.getVehiculoXPlaca(placa);
+                    string datosVehiculo = $"{vehiculo.Modelo.Marca.mar_descripcion} {vehiculo.Modelo.mod_descripcion}";
+                    bool resEmail = Logica.ClassLibrary1.LogicaMatricula.sendEmail(persona.per_correo, datosPersona, matricula.mat_fechaemision, matricula.mat_fechacaducidad, matricula.Canton.can_nombre, datosVehiculo);
                     if (resEmail)
                     {
-                        MessageBox.Show("Correo enviado correctamente", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Correo enviado Correctamente", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al generar matricula", "Sistema de Matriculación Vehicular", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                throw new ArgumentException("Error al generar Matricula " + ex.Message);
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)

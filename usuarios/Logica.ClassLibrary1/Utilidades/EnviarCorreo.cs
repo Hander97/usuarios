@@ -13,26 +13,19 @@ namespace Logica.ClassLibrary1.Utilidades
     {
         public static bool SendCorreo(Smtp dataConfiguration, string destinatario, string asunto, string mensaje)
         {
-            //Cuerpo Mensaje
-            System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
 
+            System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
             msg.IsBodyHtml = true;
 
-            //Destinatarios
             msg.To.Add(destinatario);
-
-            //Asunto
-
             msg.Subject = asunto;
-
-            //Adjuntar imagenes hacia el cuerpo del mensaje
 
             AlternateView htmlView = AlternateView.CreateAlternateViewFromString(mensaje, null, MediaTypeNames.Text.Html);
 
-            LinkedResource imageHtmlBanner1 = new LinkedResource(@"C:\Plantilla\imagen1.jpg", MediaTypeNames.Image.Jpeg);
+            LinkedResource imageHtmlBanner1 = new LinkedResource(@"C:\Plantilla\imagen1.jpg", MediaTypeNames.Text.Html);
             imageHtmlBanner1.ContentId = "idBanner1";
 
-            LinkedResource imageHtmlBanner2 = new LinkedResource(@"C:\Plantilla\imagen2.jpg", MediaTypeNames.Image.Jpeg);
+            LinkedResource imageHtmlBanner2 = new LinkedResource(@"C:\Plantilla\imagen2.png", MediaTypeNames.Text.Html);
             imageHtmlBanner2.ContentId = "idBanner2";
 
             htmlView.LinkedResources.Add(imageHtmlBanner1);
@@ -42,20 +35,20 @@ namespace Logica.ClassLibrary1.Utilidades
 
             msg.From = new MailAddress(dataConfiguration.smtp_username);
 
-
             SmtpClient cliente = new SmtpClient();
-
             cliente.Credentials = new System.Net.NetworkCredential(dataConfiguration.smtp_username, dataConfiguration.smtp_password);
             cliente.Port = int.Parse(dataConfiguration.smtp_puerto.ToString());
-            cliente.EnableSsl = Convert.ToBoolean(dataConfiguration.smtp_tls);
+            cliente.EnableSsl = (bool)dataConfiguration.smtp_tls;
 
             cliente.Host = dataConfiguration.smtp_servidor;
 
             try
             {
+
                 cliente.Send(msg);
                 msg.Dispose();
                 return true;
+
             }
             catch (Exception ex)
             {
@@ -63,6 +56,8 @@ namespace Logica.ClassLibrary1.Utilidades
                 return false;
 
             }
+
+
         }
     }
 }
