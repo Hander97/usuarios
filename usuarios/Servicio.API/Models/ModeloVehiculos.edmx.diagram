@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa3c852d908440cdb57ea4da5e35ccc3" Name="Diagram1">
+        <EntityTypeShape EntityType="DBMATRICULAModel.Canton" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Clase" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Color" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Discapacidad" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Marca" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Matricula" Width="1.5" PointX="7.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Modelo" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Pais" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Persona" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Provincia" Width="1.5" PointX="3" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Rol" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Smtp" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Tipo" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Tipo_Discapacidad" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Usuario" Width="1.5" PointX="12" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBMATRICULAModel.Vehiculo" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship10" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship9" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship4" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship7" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship11" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship12" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship5" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship6" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship2" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship8" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.RelationshipUsuarioROl" ManuallyRouted="false" />
+        <AssociationConnector Association="DBMATRICULAModel.Relationship3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
