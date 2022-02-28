@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Administracion\Vehiculos\WfmVehiculoNuevo.aspx" />
     <Content Include="Administracion\Vehiculos\WfmVehiculos.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -199,11 +200,13 @@
     <Content Include="images\bg-01.jpg" />
     <Content Include="images\buscar.png" />
     <Content Include="images\eliminar.png" />
+    <Content Include="images\guardar.png" />
     <Content Include="images\icons\favicon.ico" />
     <Content Include="images\icons\icon-google.png" />
     <Content Include="images\icons\map-marker.png" />
     <Content Include="images\modificar.png" />
     <Content Include="images\Nuevo.png" />
+    <Content Include="images\regresar.png" />
     <Content Include="js\main.js" />
     <Content Include="js\map-custom.js" />
     <Content Include="Public\WfmLogin.aspx" />
@@ -278,6 +281,13 @@
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administracion\Vehiculos\WfmVehiculoNuevo.aspx.cs">
+      <DependentUpon>WfmVehiculoNuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Vehiculos\WfmVehiculoNuevo.aspx.designer.cs">
+      <DependentUpon>WfmVehiculoNuevo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administracion\Vehiculos\WfmVehiculos.aspx.cs">
       <DependentUpon>WfmVehiculos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
