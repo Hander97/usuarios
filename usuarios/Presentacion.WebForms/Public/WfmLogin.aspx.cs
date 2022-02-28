@@ -41,5 +41,10 @@ namespace Presentacion.WebForms.Public
                 Response.Write("<script>alert('Usuario o Clave Incorrecta');</script>");
             }
         }
+
+        private void loginxapi()
+        {
+
+        }
     }
 }
