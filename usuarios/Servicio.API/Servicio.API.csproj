@@ -166,10 +166,6 @@
     <Compile Include="Models\Smtp.cs">
       <DependentUpon>ModeloVehiculos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SqlDatabaseSetup.cs" />
-    <Compile Include="Models\SqlServerUnitTest1.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>ModeloVehiculos.tt</DependentUpon>
     </Compile>
@@ -195,7 +191,6 @@
     <Content Include="Models\ModeloVehiculos.edmx.diagram">
       <DependentUpon>ModeloVehiculos.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\app.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

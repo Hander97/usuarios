@@ -7,20 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Presentacion.WebForms
+namespace Presentacion.WebForms.Administracion.Vehiculos
 {
 
 
-    public partial class _Default
+    public partial class WfmVehiculos
     {
 
         /// <summary>
-        /// Control LblUsuario.
+        /// Control gdvVehiculos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblUsuario;
+        protected global::System.Web.UI.WebControls.GridView gdvVehiculos;
     }
 }

@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Administracion\Vehiculos\WfmVehiculos.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -196,9 +197,13 @@
     <Content Include="fonts\source-sans-pro\SourceSansPro-SemiBoldItalic.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="images\bg-01.jpg" />
+    <Content Include="images\buscar.png" />
+    <Content Include="images\eliminar.png" />
     <Content Include="images\icons\favicon.ico" />
     <Content Include="images\icons\icon-google.png" />
     <Content Include="images\icons\map-marker.png" />
+    <Content Include="images\modificar.png" />
+    <Content Include="images\Nuevo.png" />
     <Content Include="js\main.js" />
     <Content Include="js\map-custom.js" />
     <Content Include="Public\WfmLogin.aspx" />
@@ -273,6 +278,13 @@
     <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administracion\Vehiculos\WfmVehiculos.aspx.cs">
+      <DependentUpon>WfmVehiculos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administracion\Vehiculos\WfmVehiculos.aspx.designer.cs">
+      <DependentUpon>WfmVehiculos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -330,7 +342,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Administracion\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

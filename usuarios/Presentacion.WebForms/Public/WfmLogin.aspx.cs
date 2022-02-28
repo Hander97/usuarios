@@ -29,6 +29,7 @@ namespace Presentacion.WebForms.Public
                 var user = LogicaUsuario.getUserXLogin(username, password);
                 if (user != null)
                 {
+                    Session["Usuario"] = user;
                     Response.Redirect("/Default.aspx");
                 }
                 else

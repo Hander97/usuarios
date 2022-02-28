@@ -11,6 +11,19 @@ namespace Logica.ClassLibrary1
     {
         private static DcMantenimientoDataContext dc = new DcMantenimientoDataContext();
 
+        public static List<Vehiculo> getVehiculos()
+        {
+            try
+            {
+                var vehiculo = dc.Vehiculo.Where(data => data.veh_status == 'A');
+
+                return vehiculo.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Error al obtener Vehiculos " + ex.Message);
+            }
+        }
         public static Vehiculo getVehiculoXPlaca(string placa)
         {
             try
